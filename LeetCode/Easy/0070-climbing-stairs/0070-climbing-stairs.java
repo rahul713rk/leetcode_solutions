@@ -1,4 +1,5 @@
 class Solution {
+    //  top - down approach (time complexity = O(n))
     int[] dp;
     public int climbStairs(int n) {
         dp = new int[n];
