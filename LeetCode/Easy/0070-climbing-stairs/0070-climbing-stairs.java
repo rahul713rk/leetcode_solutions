@@ -1,18 +1,15 @@
 class Solution {
-    //  top - down approach (time complexity = O(n))
-    int[] dp;
+    // Bottom - Up approach
     public int climbStairs(int n) {
-        dp = new int[n];
-        for (int i =0 ; i<n ; i++){
-            dp[i] = -1;
-        }
-        return dfs(n, 0);
-    }
+        if (n<=2) return n;
 
-    private int dfs(int n , int i){
-        if (n==i) return 1;
-        if (n<i) return 0;
-        if (dp[i] != -1) return dp[i];
-        return dp[i] = dfs(n , i+1) + dfs(n ,i+2);
+        int[] dp = new int[n+1];
+        dp[1] = 1;
+        dp[2] = 2;
+
+        for (int i = 3 ; i<=n ; i++){
+            dp[i] = dp[i-1] + dp[i-2];
+        }
+        return dp[n];
     }
 }
