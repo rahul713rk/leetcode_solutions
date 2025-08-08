@@ -1,4 +1,5 @@
 class Solution {
+    // top down approach
     int[] dp;
     public int minCostClimbingStairs(int[] cost) {
         dp = new int[cost.length];
