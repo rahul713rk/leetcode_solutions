@@ -1,5 +1,14 @@
 class Solution {
     public boolean containsDuplicate(int[] nums) {
-        return Arrays.stream(nums).distinct().count() != nums.length;
+        HashSet<Integer> res = new HashSet<>();
+
+        for (int num : nums){
+            if (!res.add(num)){
+                return true ;
+            }
+            // System.out.println(res.add(num));
+            // // this line print true if res add the num else return false
+        }
+        return false;
     }
 }
