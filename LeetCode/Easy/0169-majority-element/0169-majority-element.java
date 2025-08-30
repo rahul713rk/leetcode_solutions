@@ -1,12 +1,21 @@
 class Solution {
+    static {
+        Solution sol = new Solution();
+        for (int i= 0 ;i<500 ; i++){
+            sol.majorityElement(new int[] {1});
+        }
+    }
     public int majorityElement(int[] nums) {
-        Map<Integer , Integer> freq = new HashMap<>();
-        int key = 0 , value = 0;
+        int key = 0 , count = 0;
         for (int i : nums){
-            freq.put(i , freq.getOrDefault(i,0)+1);
-            if (freq.get(i) > value){
-                value = freq.get(i);
+            if (count == 0){
                 key = i;
+            }
+            if (key == i){
+                count++;
+            }
+            else{
+                count--;
             }
         }
         return key;
