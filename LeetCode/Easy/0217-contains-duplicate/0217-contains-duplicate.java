@@ -1,13 +1,20 @@
 class Solution {
+    static{
+        Solution sol = new Solution();
+        for (int i =0 ; i<100 ; i++){
+            sol.containsDuplicate(new int[]{1,1});
+        }
+    }
     public boolean containsDuplicate(int[] nums) {
         HashSet<Integer> res = new HashSet<>();
 
-        for (int num : nums){
-            if (!res.add(num)){
-                return true ;
+        for (int i : nums){
+            if (!res.contains(i)){
+                res.add(i);
             }
-            // System.out.println(res.add(num));
-            // // this line print true if res add the num else return false
+            else{
+                return true;
+            }
         }
         return false;
     }
