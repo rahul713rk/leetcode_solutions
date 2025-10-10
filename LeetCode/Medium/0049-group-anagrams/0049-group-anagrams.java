@@ -8,10 +8,11 @@ class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
         HashMap<String , List<String>> res = new HashMap<>();
         for (String s : strs){
-            char[] temp = s.toCharArray();
-            Arrays.sort(temp);
-            String key = new String(temp);
-
+            int[] count = new int[26];
+            for (char c : s.toCharArray()){
+                count[c-'a']++;
+            }
+            String key = Arrays.toString(count);
             if (!res.containsKey(key)){
                 res.put(key , new ArrayList<>());
                 res.get(key).add(s);
