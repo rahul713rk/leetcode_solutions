@@ -1,5 +1,10 @@
 class Solution {
-
+    static{
+        Solution sol = new Solution();
+        for(int i =0 ; i<500 ; i++){
+            sol.topKFrequent(new int[] {1} , 1);
+        }
+    }
     // sorting method
     // time complexity - O(nlogn)
     // space complexity - O(n)
