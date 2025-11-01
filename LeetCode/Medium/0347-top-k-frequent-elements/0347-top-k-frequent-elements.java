@@ -1,7 +1,7 @@
 class Solution {
     static{
         Solution sol = new Solution();
-        for(int i =0 ; i<100 ; i++){
+        for(int i =0 ; i<200 ; i++){
             sol.topKFrequent(new int[] {1} , 1);
         }
     }
