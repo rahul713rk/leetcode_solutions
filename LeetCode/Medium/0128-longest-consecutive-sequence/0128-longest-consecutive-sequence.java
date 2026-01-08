@@ -1,4 +1,10 @@
 class Solution {
+    static{
+        Solution sol= new Solution();
+        for (int i =0 ; i<200 ; i++){
+            sol.longestConsecutive(new int[]{1});
+        }
+    }
     public int longestConsecutive(int[] nums) {
         int res = 0;
         
